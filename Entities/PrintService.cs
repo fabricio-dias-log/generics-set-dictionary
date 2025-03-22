@@ -4,6 +4,19 @@ public class PrintService<T>
 {
     private readonly T[] _values = new T[10];
     private int _count = 0;
+
+    public void Init(PrintService<int> printService) {
+        Console.Write("How many values? ");
+        int qty = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < qty; i++) {
+            int value = int.Parse(Console.ReadLine());
+            printService.AddValue(value);
+        }
+        
+        printService.Print();
+        Console.WriteLine($"First: {printService.First()}");
+    }
     
     public void AddValue(T value) {
         if (_count == 10) {
