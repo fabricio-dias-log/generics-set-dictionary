@@ -1,11 +1,11 @@
 namespace GenericsSetDictionary.Entities;
 
-public class PrintService
+public class PrintService<T>
 {
-    private readonly int[] _values = new int[10];
+    private readonly T[] _values = new T[10];
     private int _count = 0;
     
-    public void AddValue(int value) {
+    public void AddValue(T value) {
         if (_count == 10) {
             throw new InvalidOperationException("Print Service is full.");
         }
@@ -14,7 +14,7 @@ public class PrintService
         _count++;
     }
 
-    public int First() {
+    public T First() {
         if (_count == 0) {
             throw new InvalidOperationException("Print Service is empty.");
         }

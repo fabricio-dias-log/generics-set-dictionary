@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        PrintService printService = new PrintService();
+        PrintService<int> printService = new PrintService<int>();
         
         Console.Write("How many values? ");
         int qty = int.Parse(Console.ReadLine());
