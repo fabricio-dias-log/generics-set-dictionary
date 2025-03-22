@@ -25,7 +25,7 @@ class Program
                 }
                 case 2: {
                     CalculationService calculationService = new CalculationService();
-                    calculationService.Init();
+                    calculationService.Init(calculationService);
                     break;
                 }
                 case 0:
