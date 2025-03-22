@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace GenericsSetDictionary.Entities;
 
 public class Product : IComparable{
@@ -10,7 +12,7 @@ public class Product : IComparable{
     }
 
     public override string ToString() {
-        return $"Name: {Name}; Price: {Price}";
+        return $"Name: {Name}; Price: {Price.ToString(CultureInfo.InvariantCulture)}";
     }
 
     public int CompareTo(object? obj) {
