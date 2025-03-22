@@ -1,19 +1,23 @@
+using System.Globalization;
+
 namespace GenericsSetDictionary.Entities;
 
 public class CalculationService {
 
     public void Init(CalculationService calculationService) {
-        List<int> list = new List<int>();
+        List<Product> list = new List<Product>();
         
         Console.WriteLine("Enter N: ");
         int n = int.Parse(Console.ReadLine() ?? "0");
 
         for (int i = 0; i < n; i++) {
-            int x = int.Parse(Console.ReadLine() ?? "0");
-            list.Add(x);
+            string[] vect = Console.ReadLine().Split(",");
+            string name = vect[0];
+            double price = double.Parse(vect[1], CultureInfo.CurrentCulture);
+            list.Add(new Product(name, price));
         }
 
-        int max = calculationService.Max(list);
+        Product max = calculationService.Max(list);
 
         Console.WriteLine($"Max: {max}");
     }
