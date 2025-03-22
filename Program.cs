@@ -23,7 +23,11 @@ class Program
                     printService.Init(printService);
                     break;
                 }
-
+                case 2: {
+                    CalculationService calculationService = new CalculationService();
+                    calculationService.Init();
+                    break;
+                }
                 case 0:
                     break;
                 default:
